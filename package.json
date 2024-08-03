@@ -1,0 +1,33 @@
+{
+  "name": "llm-poker-api",
+  "version": "1.0.0",
+  "description": "This is a simple Node.js Express API Project used to supply an endpoint for querying each required LLM.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jakewhiteyo/LLM-Poker-API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jakewhiteyo/LLM-Poker-API/issues"
+  },
+  "homepage": "https://github.com/jakewhiteyo/LLM-Poker-API#readme",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.25.0",
+    "@google/generative-ai": "^0.16.0",
+    "axios": "^1.7.3",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "llamaai": "^1.0.4"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.5"
+  }
+}
