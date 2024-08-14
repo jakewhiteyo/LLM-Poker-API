@@ -9,7 +9,7 @@ const queryOpenAi = async (prompt) => {
     const response = await axios.post(
       "https://api.openai.com/v1/chat/completions",
       {
-        model: "gpt-4-turbo",
+        model: "gpt-4o",
         messages: [
           {
             role: "user",
@@ -39,7 +39,7 @@ const queryGemini = async (prompt) => {
   try {
     const genAI = new GoogleGenerativeAI(apiKey);
 
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
 
     const result = await model.generateContent(prompt);
 
@@ -74,7 +74,7 @@ const queryLLama = async (prompt) => {
     // expensive model: llama3.1-405b
     const llamaAPI = new LlamaAI(apiKey);
     const apiRequestJson = {
-      model: "llama3.1-8b",
+      model: "llama3.1-405b",
       messages: [{ role: "user", content: prompt }],
       stream: false,
       function_call: "get_current_weather",
@@ -95,7 +95,7 @@ const queryClaude = async (prompt) => {
       apiKey: apiKey,
     });
     const message = await client.messages.create({
-      model: "claude-3-sonnet-20240229",
+      model: "claude-3-5-sonnet-20240620",
       max_tokens: 1000,
       temperature: 0,
       system: "",

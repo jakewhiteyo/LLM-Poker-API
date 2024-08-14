@@ -12,8 +12,8 @@ app.use(express.json());
 app.use(cors());
 
 app.post("/query-llm", async (req, res) => {
-  console.log("query");
   const { prompt, model } = req.body;
+  console.log(`${getTime()} - querying ${model}`);
 
   if (!prompt || !model)
     return res.status(400).json({ error: `Prompt and model is required` });
@@ -45,3 +45,14 @@ app.post("/query-llm", async (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
+
+const getTime = () => {
+  let currentTime = new Date();
+  let hours = currentTime.getHours();
+  let minutes = currentTime.getMinutes();
+  let seconds = currentTime.getSeconds();
+
+  let formattedTime = `${hours}:${minutes}:${seconds}`;
+
+  return formattedTime;
+};
