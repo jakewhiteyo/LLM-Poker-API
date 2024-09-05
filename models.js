@@ -63,7 +63,8 @@ const queryGemini = async (prompt) => {
 
     return text || ""; // Return empty string if text is missing
   } catch (error) {
-    console.error("Error querying Gemini API: ", error);
+    console.error("Error querying Gemini API");
+    throw error;
   }
 };
 
