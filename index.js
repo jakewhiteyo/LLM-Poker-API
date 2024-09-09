@@ -45,6 +45,7 @@ app.post("/query-llm", async (req, res) => {
       return;
     } catch (error) {
       console.log(`Error ${error}`);
+      await new Promise((resolve) => setTimeout(resolve, 5000));
       continue;
     }
   }

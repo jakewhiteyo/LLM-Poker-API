@@ -25,7 +25,8 @@
     "axios": "^1.7.3",
     "cors": "^2.8.5",
     "express": "^4.19.2",
-    "llamaai": "^1.0.4"
+    "llamaai": "^1.0.4",
+    "llm-poker-api": "file:"
   },
   "devDependencies": {
     "dotenv": "^16.4.5"
