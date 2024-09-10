@@ -17,7 +17,7 @@ app.post("/query-llm", async (req, res) => {
   if (!prompt || !model)
     return res.status(400).json({ error: `Prompt and model is required` });
 
-  const retries = 2;
+  const retries = 4;
 
   for (let attempt = 0; attempt < retries; attempt++) {
     try {
@@ -45,7 +45,7 @@ app.post("/query-llm", async (req, res) => {
       return;
     } catch (error) {
       console.log(`Error ${error}`);
-      await new Promise((resolve) => setTimeout(resolve, 5000));
+      await new Promise((resolve) => setTimeout(resolve, 10000));
       continue;
     }
   }
